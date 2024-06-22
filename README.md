@@ -42,29 +42,12 @@ Reference: [Rubik's Cube Solving Guide](http://www.rossnazirullah.com/students/i
 
 # How to Test
 
-## Clone this repository and navigate to the directory containing the code. 
+Clone this repository and navigate to the directory containing the code. 
 
-## Compile the code using the following command:
-
-g++ -o rubik_solver main.cpp
-
-### Here is next step
-
-./rubik_solver.exe GGYGGYGGY WBBWBBWBB OOOOOOOOO RRRRRRRRR WWGWWGWWG YYBYYBYYB
-
-### The output will be a list of steps to solve the cube. An example output:
-
-R R R Ri R
-
-
-### Here are some other test cases that you can also try:
-
-RRWGGWGGW YOOYBBYBB GGGOOOOOO BRRBRRBRR WWBWWBWWO YYRYYGYYG
-
-GGOGGOYYY BBWBBWRRW OOWOOWOOO YRRYRRRGG GWWGWWRRG BBBBYYBYY
-
-YGYYGYOOO RRRWBWWBW WBROOROOY OGYORRWRR GGGWWWBYB GGGBYBBYB
-
-ROGGGWGRG BWBRBBBYR OBWOOOGOW YBYGRGYBY WRRYWRBWR OYOYYWWGO
-
+Compile the code using the following command:
 ```sh
+g++ -o rubik_solver main.cpp
+./a.exe  GGYGGYGGY WBBWBBWBB OOOOOOOOO RRRRRRRRR WWGWWGWWG YYBYYBYYB
+
+# The output will look like this
+R R R Ri R
