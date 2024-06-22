@@ -49,6 +49,7 @@ g++ -o rubik_solver main.cpp
 ./rubik_solver.exe GGYGGYGGY WBBWBBWBB OOOOOOOOO RRRRRRRRR WWGWWGWWG YYBYYBYYB
 
 ### The output will be a list of steps to solve the cube. An example output:
+
 R R R Ri R
 
 
@@ -56,9 +57,13 @@ R R R Ri R
 test_moves(rubik);
 
 ### Here are some other test cases that you can also try:
+
 RRWGGWGGW YOOYBBYBB GGGOOOOOO BRRBRRBRR WWBWWBWWO YYRYYGYYG
+
 GGOGGOYYY BBWBBWRRW OOWOOWOOO YRRYRRRGG GWWGWWRRG BBBBYYBYY
+
 YGYYGYOOO RRRWBWWBW WBROOROOY OGYORRWRR GGGWWWBYB GGGBYBBYB
+
 ROGGGWGRG BWBRBBBYR OBWOOOGOW YBYGRGYBY WRRYWRBWR OYOYYWWGO
 
 ```sh
