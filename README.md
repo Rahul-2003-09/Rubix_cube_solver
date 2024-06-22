@@ -42,6 +42,6 @@ Reference: [Rubik's Cube Solving Guide](http://www.rossnazirullah.com/students/i
 
 ## How to Test
 
-Clone this repository and use the following command to build the project:
+Clone this repository and navigate to the directory containing the code. Compile the code using the following command:
 ```sh
-make
+g++ -o rubik_solver main.cpp
