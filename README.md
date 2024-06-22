@@ -40,11 +40,11 @@ Here are the series of steps:
 
 Reference: [Rubik's Cube Solving Guide](http://www.rossnazirullah.com/students/images/Rubiks.pdf)
 
-## How to Test
+# How to Test
 
-# Clone this repository and navigate to the directory containing the code. 
+## Clone this repository and navigate to the directory containing the code. 
 
-##Compile the code using the following command:
+## Compile the code using the following command:
 
 g++ -o rubik_solver main.cpp
 
