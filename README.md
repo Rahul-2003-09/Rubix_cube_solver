@@ -45,3 +45,22 @@ Reference: [Rubik's Cube Solving Guide](http://www.rossnazirullah.com/students/i
 Clone this repository and navigate to the directory containing the code. Compile the code using the following command:
 ```sh
 g++ -o rubik_solver main.cpp
+./rubik_solver.exe GGYGGYGGY WBBWBBWBB OOOOOOOOO RRRRRRRRR WWGWWGWWG YYBYYBYYB
+RRWGGWGGW YOOYBBYBB GGGOOOOOO BRRBRRBRR WWBWWBWWO YYRYYGYYG
+
+The output will be a list of steps to solve the cube. An example output:
+R R R Ri R
+
+
+Also, we have created a test function that you can de-comment to print the co-ordinates of the cube:
+test_moves(rubik);
+
+Here are some other test cases that you can also try:
+RRWGGWGGW YOOYBBYBB GGGOOOOOO BRRBRRBRR WWBWWBWWO YYRYYGYYG
+GGOGGOYYY BBWBBWRRW OOWOOWOOO YRRYRRRGG GWWGWWRRG BBBBYYBYY
+YGYYGYOOO RRRWBWWBW WBROOROOY OGYORRWRR GGGWWWBYB GGGBYBBYB
+ROGGGWGRG BWBRBBBYR OBWOOOGOW YBYGRGYBY WRRYWRBWR OYOYYWWGO
+
+
+## Notes
+As this project was conducted purely in Mandarin, a report in Mandarin can be found in this repository for reference.
