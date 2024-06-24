@@ -1,53 +1,46 @@
-# Rubik's Cube Solver
+# Rubik's Cube Solver C++
+C++ program that takes the initial and final configurations of the cube and will find a sequence of moves that will transform the initial state into the final state. The solutions is found by using one uninformed search strategy i.e. iterative-deepening and one informed search strategy named A*
 
-The Rubik's Cube is a 3D combination puzzle invented by Ernő Rubik in 1974. This project presents an efficient step-by-step implementation of a 3x3 Rubik's Cube solver.
+# About the Project
+In this part of the assignment write a C++ program that will take the initial and
+final configurations of the cube and will find a sequence of moves that will transform the initial
+state into the final state. The solutions will be found by using one uninformed search strategy i.e.
+iterative-deepening and one informed search strategy named A*
 
-### Strengths of Our Solution:
-- Single write call for the entire program
-- No cube rotation in solving algorithms
-- Dynamic programming approach
-- Solves any given input in approximately 0.001 seconds
-- Uses a maximum of 4 kilobytes of memory space
+For this assignment it is assumed that turning a face of the Rubik’s cube by 90o either in
+clockwise or counter clockwise direction is considered one move each
+Program takes as input a file containing the initial and final configuration pair and will
+output the set of moves needed to solve the puzzle
 
-## How It Works
+# Input File Format
+The first line of the file will contains the initial configuration (a space separated list of 54 digit
+code of the colors) the second line contains the final configuration.
+A complete configuration of a puzzle consists of 54 space separated digits which give the color
+information on each of the six sides of the cube. A color on each of the nine cubes on a given side
+is a digit from the set {1, 2, 3, 4, 5, 6}. The first 9 digits of these 54 digits specifying the colors of
+the 9 cubes faces on the front side (left-right and top-bottom), the next 9 numbers specifying the
+color information on the back side and then comes the color information of top, bottom, left and
+right sides.
 
-A Rubik's Cube is considered solved when each side is uniformly one color. Our program accepts six 9-length strings of randomized characters that represent each face of the Rubik's Cube. Each letter is capitalized and symbolizes a color. The solver parses the input into two structures: one tracking the corners and the other tracking the middle edges. It then applies various algorithms to solve the cube systematically from the first layer to the second and third layers. Finally, the program outputs a list of steps that will solve the cube. On average, the program takes approximately 150 moves for a complete solution.
+# Results/ Report
+Introduction
+We are writing a C++ program that will takes the initial and
+final configurations of the cube and will find a sequence of moves that will transform the initial
+state into the final state. The solutions will be found by using one uninformed search strategy i.e.
+iterative-deepening and one informed search strategy named A*.
 
-### Moves Representation:
+### Methodology
+### Iterative Deepening Algorithm
+In this algorithm, we used a stack to maintain the nodes and we simply pop the node (at the top) and compares with goal state then if it is not goal then check depth has it reached the limit if yes then stop and remove it from stack else make its 12 childs and push in the stack and repeat until the goal is found.
 
-![moves](https://raw.githubusercontent.com/mgia/rubix/master/images/image.png)
+### A* Algorithm:
+In this technique, we for choosing a child we used a heuristic function which gave us a score by comparing two states and telling how much nodes of it are matching. So instead of blindly picking a child node we picked with the highest score and add the cost from start to that node and cost from that node to goal (guess given by our heuristic function) and maintain two lists (Open and Closed). At each step we compare this cost if a node with the same position as successor is in the OPEN list which has a lower cost than successor, skip this successor if a node with the same position as successor is in the CLOSED list which has a lower cost than successor, skip this successor otherwise, add the node to the open list and repeat this until the goal is found.
 
-## Algorithm
+### Results
+In Iterative Deepening, if the cube is 5-10 moves away it usually finds the solution in seconds but if current state is messed up then it takes a lot time and consumes more memory 12depth, usually program stops due to filling of all the memory and takes hours, may be days in solving and program closes due to short memory. But in contrast, A* guess it in less moves with more efficiency in much less time and finds the solution. However, the heuristic should be good enough to guess correct moves. 
+Our heuristic was number of mismatches at a given state from the goal state.
 
-Our solver uses a series of algorithms to solve different parts of the cube. Typically, the edges are solved before the corners of each layer.
-
-Here are the series of steps:
-
-1. **White Cross**:
-   ![cube](https://raw.githubusercontent.com/mgia/rubix/master/images/white_cross.png)
-   
-2. **White Corners**:
-   ![cube](https://raw.githubusercontent.com/mgia/rubix/master/images/white_corners.png)
-   
-3. **Middle Layer**:
-   ![cube](https://raw.githubusercontent.com/mgia/rubix/master/images/middle_layer.png)
-   
-4. **Yellow Cross**:
-   ![cube](https://raw.githubusercontent.com/mgia/rubix/master/images/yellow_cross.png)
-   
-5. **Complete**:
-   ![cube](https://raw.githubusercontent.com/mgia/rubix/master/images/complete.png)
-
-Reference: [Rubik's Cube Solving Guide](http://www.rossnazirullah.com/students/images/Rubiks.pdf)
-
-# How to Test
-
-Clone this repository and navigate to the directory containing the code. 
-
-Compile the code using the following command:
-```sh
-g++ -o rubik_solver main.cpp
-./a.exe  GGYGGYGGY WBBWBBWBB OOOOOOOOO RRRRRRRRR WWGWWGWWG YYBYYBYYB
-
-# The output will look like this
-R R R Ri R
+### Conclusions
+As we can see the results, it clearly shows that A* algorithm is far better than Iterative Deepening.
+A* algorithm gives solution in much less time and more optimal solution. In contrast, Iterative deepening takes much more memory, time and is far less efficient than A*. It makes 12Depth nodes which requires much memory and processing time. But A* solves the problem in much less time and taking less memory by making wise decisions. But A* mainly depends on the heuristic function, the more the guess of heuristic is correct, the less and more optimal solution it will give. However, a bad heuristic can guide us to a wrong path and may take more time. 
+In short, A* is much better technique than Iterative Deepening in solving the required problem.
